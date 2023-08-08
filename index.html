@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  /* Reset margins and padding for the entire page */
+  body, html {
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Styling for the header */
+  .header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Basic styling for the sidebar */
+  .sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top:100px; /* Adjust this value based on your header height */
+    left: 0;
+    background-color: #111;
+    padding-top: 20px;
+  }
+
+  /* Styling for the sidebar links */
+  .sidebar a {
+    padding: 15px 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+  }
+
+  /* Highlight the active link */
+  .sidebar a:hover {
+    background-color: #333;
+  }
+
+  /* Main content area */
+  .content {
+    margin-left: 250px; /* Same as the width of the sidebar */
+    padding: px;
+  }
+
+  /* Styling for the iframe */
+  .embedded-page {
+    width: 100%;
+    height: 100vw;
+    border: none;
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Welcome in GGV Department of CSIT</h1> 
+    <!-- Replace with the name of your entity -->
+  </div>
+  <div class="sidebar">
+    <a href="#" onclick="loadPage('faculty.html')">Faculty</a>
+    <a href="#" onclick="loadPage('staff.html')">Staff</a>
+    <a href="#" onclick="loadPage('course.html')">Courses</a>
+  </div>
+  <div class="content">
+    <iframe class="embedded-page" id="contentFrame" src="faculty.html"></iframe>
+  </div>
+
+  <script>
+    function loadPage(page) {
+      document.getElementById('contentFrame').src = page;
+    }
+  </script>
+</body>
+</html>
